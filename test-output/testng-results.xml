@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="12" total="17" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite1" duration-ms="43259" started-at="2018-04-25T10:22:08Z" finished-at="2018-04-25T10:22:51Z">
+    <groups>
+      <group name="resetPassword">
+        <method signature="BaseClass.ResetPassword()[pri:0, instance:olx.BaseClass@7c30a502]" name="ResetPassword" class="olx.BaseClass"/>
+        <method signature="BaseClass.ResetPasswordWithShortPAss()[pri:0, instance:olx.BaseClass@7c30a502]" name="ResetPasswordWithShortPAss" class="olx.BaseClass"/>
+        <method signature="BaseClass.ResetPasswordWithouNewPass()[pri:0, instance:olx.BaseClass@7c30a502]" name="ResetPasswordWithouNewPass" class="olx.BaseClass"/>
+        <method signature="BaseClass.ResetPasswordWithoutEmail()[pri:0, instance:olx.BaseClass@7c30a502]" name="ResetPasswordWithoutEmail" class="olx.BaseClass"/>
+      </group> <!-- resetPassword -->
+      <group name="success">
+        <method signature="BaseClass.RegisterSucces()[pri:0, instance:olx.BaseClass@7c30a502]" name="RegisterSucces" class="olx.BaseClass"/>
+        <method signature="BaseClass.ResetPassword()[pri:0, instance:olx.BaseClass@7c30a502]" name="ResetPassword" class="olx.BaseClass"/>
+      </group> <!-- success -->
+      <group name="register">
+        <method signature="BaseClass.RegisterSucces()[pri:0, instance:olx.BaseClass@7c30a502]" name="RegisterSucces" class="olx.BaseClass"/>
+      </group> <!-- register -->
+    </groups>
+    <test name="Test" duration-ms="43259" started-at="2018-04-25T10:22:08Z" finished-at="2018-04-25T10:22:51Z">
+      <class name="olx.BaseClass">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:olx.BaseClass@7c30a502]" name="setUp" is-config="true" duration-ms="2871" started-at="2018-04-25T12:22:08Z" finished-at="2018-04-25T12:22:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="getUrl()[pri:0, instance:olx.BaseClass@7c30a502]" name="getUrl" is-config="true" duration-ms="14974" started-at="2018-04-25T12:22:11Z" finished-at="2018-04-25T12:22:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getUrl -->
+        <test-method status="PASS" signature="RegisterSucces()[pri:0, instance:olx.BaseClass@7c30a502]" name="RegisterSucces" duration-ms="5020" started-at="2018-04-25T12:22:26Z" finished-at="2018-04-25T12:22:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RegisterSucces -->
+        <test-method status="PASS" signature="getUrl()[pri:0, instance:olx.BaseClass@7c30a502]" name="getUrl" is-config="true" duration-ms="1190" started-at="2018-04-25T12:22:31Z" finished-at="2018-04-25T12:22:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getUrl -->
+        <test-method status="PASS" signature="ResetPassword()[pri:0, instance:olx.BaseClass@7c30a502]" name="ResetPassword" duration-ms="4989" started-at="2018-04-25T12:22:32Z" finished-at="2018-04-25T12:22:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ResetPassword -->
+        <test-method status="PASS" signature="getUrl()[pri:0, instance:olx.BaseClass@7c30a502]" name="getUrl" is-config="true" duration-ms="1274" started-at="2018-04-25T12:22:37Z" finished-at="2018-04-25T12:22:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getUrl -->
+        <test-method status="PASS" signature="ResetPasswordWithShortPAss()[pri:0, instance:olx.BaseClass@7c30a502]" name="ResetPasswordWithShortPAss" duration-ms="2651" started-at="2018-04-25T12:22:38Z" finished-at="2018-04-25T12:22:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ResetPasswordWithShortPAss -->
+        <test-method status="PASS" signature="getUrl()[pri:0, instance:olx.BaseClass@7c30a502]" name="getUrl" is-config="true" duration-ms="1352" started-at="2018-04-25T12:22:41Z" finished-at="2018-04-25T12:22:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getUrl -->
+        <test-method status="PASS" signature="ResetPasswordWithouNewPass()[pri:0, instance:olx.BaseClass@7c30a502]" name="ResetPasswordWithouNewPass" duration-ms="2643" started-at="2018-04-25T12:22:42Z" finished-at="2018-04-25T12:22:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ResetPasswordWithouNewPass -->
+        <test-method status="PASS" signature="getUrl()[pri:0, instance:olx.BaseClass@7c30a502]" name="getUrl" is-config="true" duration-ms="1159" started-at="2018-04-25T12:22:45Z" finished-at="2018-04-25T12:22:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getUrl -->
+        <test-method status="PASS" signature="ResetPasswordWithoutEmail()[pri:0, instance:olx.BaseClass@7c30a502]" name="ResetPasswordWithoutEmail" duration-ms="3071" started-at="2018-04-25T12:22:46Z" finished-at="2018-04-25T12:22:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ResetPasswordWithoutEmail -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:olx.BaseClass@7c30a502]" name="tearDown" is-config="true" duration-ms="2043" started-at="2018-04-25T12:22:49Z" finished-at="2018-04-25T12:22:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- olx.BaseClass -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite1 -->
+</testng-results>
