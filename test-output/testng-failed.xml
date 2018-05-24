@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite1]">
-  <test name="test1(failed)">
-    <groups>
-      <run>
-        <include name="register"/>
-      </run>
-    </groups>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Test strony OLX]">
+  <listeners>
+    <listener class-name="olx.Reporter"/>
+  </listeners>
+  <test name="Test(failed)">
     <classes>
       <class name="olx.BaseClass">
         <methods>
-          <include name="RegisterWithWrongPass"/>
-          <include name="RegisterWithNewsLetter"/>
-          <include name="RegisterWithoutEmail"/>
-          <include name="RegisterWithWrongEmailFormat"/>
-          <include name="RegisterWithoutPass"/>
-          <include name="RegisterSucces"/>
-          <include name="RegisterWithoutAcceptTerms"/>
+          <include name="getUrl"/>
+          <include name="closeTestCase"/>
+          <include name="setUp"/>
+          <include name="LoginSuccess"/>
+          <include name="tearDown"/>
+          <include name="LogOutTest"/>
         </methods>
       </class> <!-- olx.BaseClass -->
     </classes>
-  </test> <!-- test1(failed) -->
-</suite> <!-- Failed suite [Suite1] -->
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Test strony OLX] -->

@@ -1,13 +1,13 @@
 package olx;
 
-
-
 import olx.LoginTests.LoginPage;
 import olx.RegisterTests.RegistryPage;
 import olx.jsonData.JsonParser;
 import olx.jsonData.UserData;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.ITestListener;
+import org.testng.TestListenerAdapter;
 import org.testng.annotations.*;
 
 import static olx.BaseMethods.generateRandomEmail;
@@ -16,7 +16,7 @@ import static olx.LoginTests.DataElementsForLogin.notify_login;
 import static olx.RegisterTests.DataElementsForRegister.notify;
 
 
-public class BaseClass {
+public class BaseClass extends TestListenerAdapter implements ITestListener {
 
     public WebDriver driver;
     protected TestMethods testMethods;
@@ -52,7 +52,6 @@ public class BaseClass {
    }
 
     @Test(groups = "register")
-    @Parameters ("loginSuccess")
     public void RegisterWithoutEmail() {
         register.registryUniversalMethod(generateRandomString(0),generateRandomString(8));
         register.acceptTerms();
@@ -84,7 +83,7 @@ public class BaseClass {
         register.checkNotify(notify, "Niepoprawny format e-mail");
     }
 
-    @Test(groups = "register")
+    @Test(groups = "register", priority = 1)
     public void RegisterWithWrongPass() {
         register.registryUniversalMethod(generateRandomEmail(),generateRandomString(5));
         register.acceptTerms();
@@ -92,7 +91,7 @@ public class BaseClass {
         register.checkNotify(notify, "Proszę wpisać co najmniej 6 znaków.");
     }
 
-    @Test(groups = "register")  //po wywolaniu testu RegisterSucces() strona czasem przekierowuje na strone z komunikatem o błędzie.
+    @Test(groups = "register", priority = 1)  //po wywolaniu testu RegisterSucces() strona czasem przekierowuje na strone z komunikatem o błędzie.
     public void RegisterWithNewsLetter() {
         register.registryUniversalMethod(generateRandomEmail(),generateRandomString(6)+"A!");
         register.acceptTerms();
@@ -129,31 +128,31 @@ public class BaseClass {
         register.checkNotify(notify, "Nie może być krótsze niż 6 znaków");
     }
 
-    @Parameters("   ")
-    @Test
-    public void LoginSuccess() {
+
+    @Test (groups = {"login", "success"})
+    public void LoginSuccess () {
         login.loginSucces(UserData.email, UserData.pass);
     }
 
-    @Test
+    @Test (groups = {"login"})
     public void LoginWithoutEmail() {
         login.loginSucces("", UserData.pass);
         login.checkNotify(notify_login, "To pole jest wymagane");
     }
 
-    @Test
+    @Test (groups = {"login"})
     public void LoginWithoutPass() {
         login.loginSucces(UserData.email, generateRandomString(0));
         login.checkNotify(notify_login, "To pole jest wymagane");
     }
 
-    @Test
+    @Test (groups = {"login"})
     public void LoginWithWrongEmail() {
         login.loginSucces(generateRandomEmail(), UserData.pass);
         login.checkNotify(notify_login, "nieprawidłowy login lub hasło");
     }
 
-    @Test
+    @Test (groups = {"login"})
     public void LoginWithWrongPass() {
         login.loginSucces(UserData.email,generateRandomString(8));
         login.checkNotify(notify_login, "nieprawidłowy login lub hasło");
@@ -165,6 +164,17 @@ public class BaseClass {
         register.acceptTerms();
         register.submitButton();
         register.checkNotify(notify, "Teraz musisz aktywować swoje konto!");
+    }
+
+    @Test (dependsOnMethods = "LoginSuccess")
+    public void LogOutTest() {
+        login.LogOut();
+        testMethods.sleep(5000);
+    }
+
+    @AfterMethod
+    public void closeTestCase(){
+//        driver.manage().deleteAllCookies();
     }
 
     @AfterTest (alwaysRun = true)
